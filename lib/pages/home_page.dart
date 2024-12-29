@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
+import 'package:portfolio/constants/nav_items.dart';
+import 'package:portfolio/styles/styles.dart';
+import 'package:portfolio/widgets/header_desktop.dart';
+import 'package:portfolio/widgets/header_mobile.dart';
+import 'package:portfolio/widgets/site_logo.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -16,13 +21,12 @@ class _HomePageState extends State<HomePage> {
       body: ListView(
         scrollDirection: Axis.vertical,
         children: [
-
           //main
-           Container(
-             height: 500,
-             width: double.maxFinite,
+            //HeaderDesktop(),
+          HeaderMobile(
+            onMenuTap: (){},
+          ),
 
-           ),
 
           //skills
           Container(
@@ -35,7 +39,7 @@ class _HomePageState extends State<HomePage> {
           Container(
             height: 500,
             width: double.maxFinite,
-            color: Colors.blueGrey,
+            // color: Colors.blueGrey,
           ),
 
           //Contact
@@ -44,7 +48,6 @@ class _HomePageState extends State<HomePage> {
             width: double.maxFinite,
             color: Colors.blueGrey,
           ),
-
         ],
       ),
     );
