@@ -24,6 +24,7 @@ class _HomePageState extends State<HomePage> {
           //main
             //HeaderDesktop(),
           HeaderMobile(
+            onLogoTap: (){},
             onMenuTap: (){},
           ),
 
