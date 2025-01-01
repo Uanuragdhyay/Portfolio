@@ -18,8 +18,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
+    final screenSize =MediaQuery.of(context).size;
+    final screenWidth = screenSize.width;
+
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
         key: scaffoldKey,
@@ -40,6 +44,24 @@ class _HomePageState extends State<HomePage> {
                   scaffoldKey.currentState?.openEndDrawer();
                 },
               ),
+
+            Container(
+              child: Row(
+                children: [
+                  Column(
+                    children: [
+                      Text("Hi. \nI'm Anurag Upadhyay \nA Flutter Developer"),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: Text("Get in touch"),
+                      ),
+                    ],
+                  ),
+                  Image.asset("Assets/face1.png",
+                  width: screenWidth/2,),
+                ],
+              ),
+            ),
 
             //skills
             Container(
