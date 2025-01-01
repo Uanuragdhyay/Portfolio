@@ -64,9 +64,14 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white,
                         height: 1.5
                       ),),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text("Get in touch",style: TextStyle(color: Colors.yellow.shade200),),
+                      const SizedBox(height: 15,),
+                      SizedBox(
+                        width: 200,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          child: Text("Get in touch",style: TextStyle(color: Colors.black),),
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.yellowAccent),
+                        ),
                       ),
                     ],
                   ),
