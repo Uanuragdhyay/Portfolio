@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  Image.asset("Assets/face4.jpg",
+                  Image.asset("Assets/face4.png",
                   width: screenWidth/2,height: screenHeight/2,alignment: Alignment.center,),
                 ],
               ),
