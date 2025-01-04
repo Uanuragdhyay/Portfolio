@@ -9,8 +9,8 @@ List<String>navTitles = [
 ];
 List<IconData>navIcons=[
   Icons.home,
-  Icons.android_outlined,
-  Icons.back_hand_outlined,
+  Icons.handyman_outlined,
+  Icons.apps,
   Icons.web,
   Icons.quick_contacts_mail
 ];
