@@ -98,9 +98,17 @@ class _HomePageState extends State<HomePage> {
                       color: Colors.white,
                     ),
                   ),
+               SizedBox(height: 40,),
                   
                //work projects card
-                  ProjectCard(project: workProjectUtils.first)
+                  Wrap(
+                    spacing: 25,
+                    runSpacing: 25,
+                    children: [
+                      for(int i = 0; i<workProjectUtils.length; i++)
+                      ProjectCard(project: workProjectUtils[i]),
+                    ],
+                  )
                 ],
               ),
 

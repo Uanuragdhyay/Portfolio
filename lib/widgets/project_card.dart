@@ -25,12 +25,12 @@ class ProjectCard extends StatelessWidget {
         children: [
           Image.asset(
             project.image,
-            height: 160,
+            height: 150,
             width: 250,
             fit: BoxFit.cover,
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(12, 12, 12, 12),
+            padding: const EdgeInsets.fromLTRB(12, 12, 8, 8),
             child: Text(
               project.title,
               style: const TextStyle(
@@ -46,7 +46,8 @@ class ProjectCard extends StatelessWidget {
             child: Text(
               project.subTitle,
               style: const TextStyle(
-                  fontSize: 10,
+                  fontSize: 11,
+                  fontWeight: FontWeight.w500,
                   color: Colors.black
               ),
             ),
@@ -62,7 +63,7 @@ class ProjectCard extends StatelessWidget {
                 vertical: 10),
             child: Row(
               children: [
-                Text("Available on :  ",
+                Text("Source Code Available on :  ",
                   style: TextStyle(
                       color: Colors.blue.shade200,
                       fontSize: 12),

@@ -28,7 +28,7 @@ List<ProjectUtils> workProjectUtils=[
       GitHubLink:'https://github.com/Uanuragdhyay/QuizApp'
   ),
   ProjectUtils(
-      image: 'Assets/projects/rollDiceApp',
+      image: 'Assets/projects/rollDiceApp.jpg',
       title: 'Basic Dice App',
       subTitle: ' Simple roll dice app to understand stateful widget',
       GitHubLink:'https://github.com/Uanuragdhyay/rollDiceApp'
