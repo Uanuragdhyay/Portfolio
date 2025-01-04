@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/constants/colors.dart';
 import 'package:portfolio/constants/nav_items.dart';
 import 'package:portfolio/constants/size.dart';
+import 'package:portfolio/constants/skill_items.dart';
 import 'package:portfolio/styles/styles.dart';
 import 'package:portfolio/widgets/MainDesktop.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
 import 'package:portfolio/widgets/main_mobile.dart';
 import 'package:portfolio/widgets/site_logo.dart';
+import 'package:portfolio/widgets/skills_Mobile.dart';
+import 'package:portfolio/widgets/skills_desktop.dart';
 
 import '../widgets/drawer_mobile.dart';
 
@@ -53,9 +56,29 @@ class _HomePageState extends State<HomePage> {
 
             //skills
             Container(
-              height: 500,
-              width: double.maxFinite,
-              color: Colors.blueGrey,
+              width: screenWidth,
+              padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+              color: Colors.black45,
+              child:   Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+            //title
+                 const Text("What I can do",
+                    style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                  ),
+                  ),
+           SizedBox(height: 40,),
+
+              //platform and skills
+                 if(constraints.maxWidth>=kMedDesktopWidth)
+                   const SkillsDesktop()
+                  else
+                    const SkillsMobile()
+                ],
+              ),
             ),
 
             //projects
