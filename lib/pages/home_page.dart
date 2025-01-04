@@ -16,6 +16,7 @@ import 'package:portfolio/widgets/site_logo.dart';
 import 'package:portfolio/widgets/skills_Mobile.dart';
 import 'package:portfolio/widgets/skills_desktop.dart';
 
+import '../widgets/Contacts.dart';
 import '../widgets/drawer_mobile.dart';
 
 class HomePage extends StatefulWidget {
@@ -93,76 +94,7 @@ class _HomePageState extends State<HomePage> {
             const ProjectSection(),
 
             //CONTACT
-            Container(
-              padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-              color: Colors.black54,
-              child: Column(
-                children: [
-                  //title
-                  Text(
-                    "Get in Touch",
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
-                        color: Colors.blueAccent.shade100),
-                  ),
-                  const SizedBox(
-                    height: 50,
-                  ),
-                  ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxWidth: 700,
-                    ),
-                    child: Row(
-                      children: [
-                        Flexible(
-                          child: Customtextfield(
-                            hintText: "Your Name",
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 15,
-                        ),
-                        Flexible(
-                          child: Customtextfield(
-                            hintText: "Your e-mail",
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxWidth: 700,
-                    ),
-                    child: Customtextfield(
-                      hintText: "Your message",
-                      maxLines: 15,
-                    ),
-                  ),
-
-                  SizedBox(
-                    height: 20,
-                  ),
-                  //send button
-                  SizedBox(
-                    width: double.maxFinite,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Get in touch",
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.pink.shade100),
-                    ),
-                  )
-                ],
-              ),
-            ),
+            Contacts(),
 
             //FOOTER
             Container(
