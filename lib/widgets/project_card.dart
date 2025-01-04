@@ -42,7 +42,7 @@ class ProjectCard extends StatelessWidget {
 
           //SUBTITLE
           Padding(
-            padding: const EdgeInsets.fromLTRB(12, 0, 12, 12),
+            padding: const EdgeInsets.fromLTRB(12, 0, 8, 12),
             child: Text(
               project.subTitle,
               style: const TextStyle(
@@ -56,11 +56,12 @@ class ProjectCard extends StatelessWidget {
 
           //footer
 
+          // if(project.GitHubLink!=null)
           Container(
             color: Colors.black,
             padding: const EdgeInsets.symmetric(
                 horizontal: 12,
-                vertical: 10),
+                vertical: 8),
             child: Row(
               children: [
                 Text("Source Code Available on :  ",
@@ -69,7 +70,7 @@ class ProjectCard extends StatelessWidget {
                       fontSize: 12),
                 ),
                 const Spacer(),
-                if(project.GitHubLink!=null)
+
                   Padding(
                   padding: EdgeInsets.only(left: 6),
                   child: InkWell(

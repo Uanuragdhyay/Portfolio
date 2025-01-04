@@ -28,9 +28,16 @@ List<ProjectUtils> workProjectUtils=[
       GitHubLink:'https://github.com/Uanuragdhyay/QuizApp'
   ),
   ProjectUtils(
+    image: 'Assets/projects/'
+        ''
+        'mausamApp.jpg',
+    title: 'MausamApp',
+    subTitle: 'A weather App made with flutter',
+  ),
+  ProjectUtils(
       image: 'Assets/projects/rollDiceApp.jpg',
       title: 'Basic Dice App',
-      subTitle: ' Simple roll dice app to understand stateful widget',
+      subTitle: 'Simple roll dice app to understand stateful widget',
       GitHubLink:'https://github.com/Uanuragdhyay/rollDiceApp'
   ),
   ProjectUtils(
@@ -39,11 +46,7 @@ List<ProjectUtils> workProjectUtils=[
       subTitle: 'To do App to learn basic widget based architecture ',
       GitHubLink:'https://github.com/Uanuragdhyay/TodoApp'
   ),
-  ProjectUtils(
-    image: 'Assets/projects/mausamApp.jpg',
-    title: 'MausamApp',
-    subTitle: 'A weather App made with flutter',
-  ),
+
 
 
 ];

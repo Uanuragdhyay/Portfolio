@@ -6,10 +6,12 @@ import 'package:portfolio/constants/skill_items.dart';
 import 'package:portfolio/styles/styles.dart';
 import 'package:portfolio/utils/projectUtils.dart';
 import 'package:portfolio/widgets/MainDesktop.dart';
+import 'package:portfolio/widgets/customTextField.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
 import 'package:portfolio/widgets/main_mobile.dart';
 import 'package:portfolio/widgets/project_card.dart';
+import 'package:portfolio/widgets/project_section.dart';
 import 'package:portfolio/widgets/site_logo.dart';
 import 'package:portfolio/widgets/skills_Mobile.dart';
 import 'package:portfolio/widgets/skills_desktop.dart';
@@ -84,45 +86,60 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //PROJECTS`
-            Container(
+            const ProjectSection(),
 
-              width: screenWidth,
+            //CONTACT
+            Container(
               padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+              color: Colors.black54,
               child: Column(
                 children: [
-                //work projects title
-                  const Text("Projects",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                  //title
+                  Text("Get in Touch",style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                    color:Colors.blueAccent.shade100
                   ),
-               SizedBox(height: 40,),
-                  
-               //work projects card
-                  Wrap(
-                    spacing: 25,
-                    runSpacing: 25,
+                  ),
+               const SizedBox(height: 50,),
+                  Row(
                     children: [
-                      for(int i = 0; i<workProjectUtils.length; i++)
-                      ProjectCard(project: workProjectUtils[i]),
+                      Flexible(
+                          child: Customtextfield(
+                            hintText: "Your Name",
+                          ),
+                      ),
+                      const SizedBox(width: 15,),
+                      Flexible(
+                        child: Customtextfield(
+                          hintText: "Your e-mail",
+                        ),
+                      ),
                     ],
-                  )
+                  ),
+                  const SizedBox(height: 15,),
+                   Customtextfield(
+                      hintText: "Your message",
+                      maxLines: 20,
+                    ),
+
+                  //send button
+
+
                 ],
               ),
-
             ),
 
-            //Contact
+            //FOOTER
             Container(
               height: 500,
               width: double.maxFinite,
-              color: Colors.blueGrey,
             ),
           ],
         ),
       );
     });
   }
+
+
 }
