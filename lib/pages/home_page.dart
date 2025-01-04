@@ -4,10 +4,12 @@ import 'package:portfolio/constants/nav_items.dart';
 import 'package:portfolio/constants/size.dart';
 import 'package:portfolio/constants/skill_items.dart';
 import 'package:portfolio/styles/styles.dart';
+import 'package:portfolio/utils/projectUtils.dart';
 import 'package:portfolio/widgets/MainDesktop.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
 import 'package:portfolio/widgets/main_mobile.dart';
+import 'package:portfolio/widgets/project_card.dart';
 import 'package:portfolio/widgets/site_logo.dart';
 import 'package:portfolio/widgets/skills_Mobile.dart';
 import 'package:portfolio/widgets/skills_desktop.dart';
@@ -81,11 +83,27 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
-            //projects
+            //PROJECTS`
             Container(
-              height: 500,
-              width: double.maxFinite,
-              // color: Colors.blueGrey,
+
+              width: screenWidth,
+              padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+              child: Column(
+                children: [
+                //work projects title
+                  const Text("Projects",
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                  
+               //work projects card
+                  ProjectCard(project: workProjectUtils.first)
+                ],
+              ),
+
             ),
 
             //Contact
