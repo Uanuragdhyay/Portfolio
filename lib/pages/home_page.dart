@@ -55,30 +55,34 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
             if (constraints.maxWidth >= kMinDesktopWidth)
-             const Maindesktop() else const MainMobile(),
-
+              const Maindesktop()
+            else
+              const MainMobile(),
 
             //skills
             Container(
               width: screenWidth,
               padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
               color: Colors.black45,
-              child:   Column(
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-            //title
-                 const Text("What I can do",
+                  //title
+                  const Text(
+                    "What I can do",
                     style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
                       color: Colors.white,
+                    ),
                   ),
+                  SizedBox(
+                    height: 40,
                   ),
-           SizedBox(height: 40,),
 
-              //platform and skills
-                 if(constraints.maxWidth>=kMedDesktopWidth)
-                   const SkillsDesktop()
+                  //platform and skills
+                  if (constraints.maxWidth >= kMedDesktopWidth)
+                    const SkillsDesktop()
                   else
                     const SkillsMobile()
                 ],
@@ -95,37 +99,67 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   //title
-                  Text("Get in Touch",style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
-                    color:Colors.blueAccent.shade100
+                  Text(
+                    "Get in Touch",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 24,
+                        color: Colors.blueAccent.shade100),
                   ),
+                  const SizedBox(
+                    height: 50,
                   ),
-               const SizedBox(height: 50,),
-                  Row(
-                    children: [
-                      Flexible(
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: 700,
+                    ),
+                    child: Row(
+                      children: [
+                        Flexible(
                           child: Customtextfield(
                             hintText: "Your Name",
                           ),
-                      ),
-                      const SizedBox(width: 15,),
-                      Flexible(
-                        child: Customtextfield(
-                          hintText: "Your e-mail",
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 15,),
-                   Customtextfield(
-                      hintText: "Your message",
-                      maxLines: 20,
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Flexible(
+                          child: Customtextfield(
+                            hintText: "Your e-mail",
+                          ),
+                        ),
+                      ],
                     ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: 700,
+                    ),
+                    child: Customtextfield(
+                      hintText: "Your message",
+                      maxLines: 15,
+                    ),
+                  ),
 
+                  SizedBox(
+                    height: 20,
+                  ),
                   //send button
-
-
+                  SizedBox(
+                    width: double.maxFinite,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Get in touch",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.pink.shade100),
+                    ),
+                  )
                 ],
               ),
             ),
@@ -140,6 +174,4 @@ class _HomePageState extends State<HomePage> {
       );
     });
   }
-
-
 }
