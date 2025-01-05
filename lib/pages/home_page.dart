@@ -7,6 +7,7 @@ import 'package:portfolio/styles/styles.dart';
 import 'package:portfolio/utils/projectUtils.dart';
 import 'package:portfolio/widgets/MainDesktop.dart';
 import 'package:portfolio/widgets/customTextField.dart';
+import 'package:portfolio/widgets/footer.dart';
 import 'package:portfolio/widgets/header_desktop.dart';
 import 'package:portfolio/widgets/header_mobile.dart';
 import 'package:portfolio/widgets/main_mobile.dart';
@@ -28,6 +29,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final scrollController = ScrollController();
+  final List<GlobalKey> navbarKeys = List.generate(4, (index) => GlobalKey());
 
   @override
   Widget build(BuildContext context) {
@@ -41,69 +44,100 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: CustomColor.scaffoldBg,
         endDrawer: constraints.maxWidth >= kMinDesktopWidth
             ? null
-            : const DrawerMobile(),
-        body: ListView(
-          scrollDirection: Axis.vertical,
-          children: [
-            //main
-            if (constraints.maxWidth >= kMinDesktopWidth)
-              const HeaderDesktop()
-            else
-              HeaderMobile(
-                onLogoTap: () {},
-                onMenuTap: () {
-                  scaffoldKey.currentState?.openEndDrawer();
+            : DrawerMobile(
+                onNavItemTap: (int navIndex) {
+                  scaffoldKey.currentState?.closeEndDrawer();
+                  scrollToSection(navIndex);
                 },
               ),
-            if (constraints.maxWidth >= kMinDesktopWidth)
-              const Maindesktop()
-            else
-              const MainMobile(),
-
-            //skills
-            Container(
-              width: screenWidth,
-              padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-              color: Colors.black45,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  //title
-                  const Text(
-                    "What I can do",
-                    style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 40,
-                  ),
-
-                  //platform and skills
-                  if (constraints.maxWidth >= kMedDesktopWidth)
-                    const SkillsDesktop()
-                  else
-                    const SkillsMobile()
-                ],
+        body: SingleChildScrollView(
+          controller: scrollController,
+          scrollDirection: Axis.vertical,
+          child: Column(
+            children: [
+              SizedBox(
+                key: navbarKeys.first,
               ),
-            ),
+              //main
+              if (constraints.maxWidth >= kMinDesktopWidth)
+                HeaderDesktop(
+                  onNavMenuTap: (int navIndex) {
+                    scrollToSection(navIndex);
+                  },
+                )
+              else
+                HeaderMobile(
+                  onLogoTap: () {},
+                  onMenuTap: () {
+                    scaffoldKey.currentState?.openEndDrawer();
+                  },
+                ),
+              if (constraints.maxWidth >= kMinDesktopWidth)
+                const Maindesktop()
+              else
+                const MainMobile(),
 
-            //PROJECTS`
-            const ProjectSection(),
+              //skills
+              Container(
+                key: navbarKeys[1],
+                width: screenWidth,
+                padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
+                color: Colors.black45,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    //title
+                    const Text(
+                      "What I can do",
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
 
-            //CONTACT
-            Contacts(),
+                    //platform and skills
+                    if (constraints.maxWidth >= kMedDesktopWidth)
+                      const SkillsDesktop()
+                    else
+                      const SkillsMobile()
+                  ],
+                ),
+              ),
 
-            //FOOTER
-            Container(
-              height: 500,
-              width: double.maxFinite,
-            ),
-          ],
+              //PROJECTS`
+              ProjectSection(
+                key: navbarKeys[2],
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+
+              //CONTACT
+              Contacts(key: navbarKeys[3]),
+              const SizedBox(
+                height: 30,
+              ),
+
+              //FOOTER
+              const Footer(),
+            ],
+          ),
         ),
       );
     });
+  }
+
+  void scrollToSection(int navIndex) {
+    if (navIndex == 4) {
+      return;
+    }
+
+    final key = navbarKeys[navIndex];
+    Scrollable.ensureVisible(key.currentContext!,
+        duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
   }
 }
