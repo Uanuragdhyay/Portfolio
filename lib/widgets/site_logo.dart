@@ -9,7 +9,7 @@ class SiteLogo extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(left: 18.0,top:8,right: 8,bottom: 8 ),
         child: Text(
           "A U",
           style: TextStyle(

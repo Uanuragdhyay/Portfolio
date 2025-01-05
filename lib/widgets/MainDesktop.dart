@@ -35,11 +35,12 @@ class Maindesktop extends StatelessWidget {
                   height: 15,
                 ),
                 SizedBox(
+                  // key: gitouchKey,
                   width: 200,
                   child: ElevatedButton(
                     onPressed: () {},
                     child: Text(
-                      "Get in touch",
+                      "",
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold),
