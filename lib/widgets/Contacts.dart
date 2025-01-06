@@ -132,7 +132,7 @@ class _ContactsState extends State<Contacts> {
             child: Customtextfield(
               controller: _messageController,
               hintText: "Your Message",
-              maxLines: 15,
+
             ),
           ),
           const SizedBox(height: 20),
