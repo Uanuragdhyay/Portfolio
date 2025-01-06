@@ -4,27 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 class Maindesktop extends StatelessWidget {
   const Maindesktop({super.key});
 
-  Future<void> openPDF(BuildContext context) async {
-    final url = 'https://anuragupadhyayresume.tiiny.site/'; // Path to your PDF file
 
-    // Try to open the file
-    try {
-      final Uri fileUri = Uri.file(url);
-      if (await canLaunchUrl(fileUri)) {
-        await launchUrl(fileUri);
-      } else {
-        // If unable to open, show an error
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text('Unable to open the PDF file')),
-        );
-      }
-    } catch (e) {
-      debugPrint('Error opening PDF: $e');
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Error: $e')),
-      );
-    }
-  }
 
   @override
   Widget build(BuildContext context) {

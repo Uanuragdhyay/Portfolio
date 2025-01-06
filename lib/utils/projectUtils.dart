@@ -28,7 +28,7 @@ List<ProjectUtils> workProjectUtils=[
       GitHubLink:'https://github.com/Uanuragdhyay/QuizApp'
   ),
   ProjectUtils(
-    image: 'Assets/projects/mausamApp.jpg',
+    image: 'Assets/img.png',
     title: 'MausamApp',
     subTitle: 'A weather App made with flutter',
   ),

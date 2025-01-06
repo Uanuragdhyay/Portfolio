@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/colors.dart';
 
@@ -52,15 +53,26 @@ class MainMobile extends StatelessWidget {
           SizedBox(
             width: 180,
             child: ElevatedButton(
-              onPressed: () {},
-              child: Text(
-                "Get in touch",
+              onPressed: () async {
+                // Use Uri.parse for web URLs
+                final url = Uri.parse("https://anuragupadhyayresume.tiiny.site/");
+                if (await canLaunchUrl(url)) {
+                  await launchUrl(url);
+                } else {
+                  // Handle the case when the URL cannot be launched
+                  print("Could not launch $url");
+                }
+              },
+              child: const Text(
+                "Resume",
                 style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold),
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.yellowAccent),
+                backgroundColor: Colors.yellowAccent,
+              ),
             ),
           ),
         ],

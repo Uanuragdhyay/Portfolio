@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
 
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
+        resizeToAvoidBottomInset:true,
         key: scaffoldKey,
         backgroundColor: CustomColor.scaffoldBg,
         endDrawer: constraints.maxWidth >= kMinDesktopWidth
