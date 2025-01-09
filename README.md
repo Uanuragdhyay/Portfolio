@@ -5,3 +5,4 @@ This is a Flutter application built to demonstrate [feature/purpose]. It uses Da
 - Flutter (Dart)
 - [Other tools/libraries]
 ## portfolio completed with flutter 
+## after a lot of tries i made my portfolio with flutter and deployed it on netlify 
