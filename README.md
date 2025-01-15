@@ -3,6 +3,5 @@ This is a Flutter application built to demonstrate [my skills and my projects]. 
 
 ## Tech Stack
 - Flutter (Dart)
-- [Other tools/libraries]
 ## portfolio completed with flutter 
 ## after a lot of tries i made my portfolio with flutter and deployed it on netlify 
