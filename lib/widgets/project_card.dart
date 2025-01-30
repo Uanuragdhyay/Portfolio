@@ -13,8 +13,8 @@ class ProjectCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       clipBehavior: Clip.antiAlias,
-      height: 280,
-      width: 250,
+      height: 430,
+      width: 300,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.grey,
@@ -25,9 +25,9 @@ class ProjectCard extends StatelessWidget {
         children: [
           Image.asset(
             project.image,
-            height: 150,
-            width: 250,
-            fit: BoxFit.cover,
+            height: 300,
+            width: 300,
+            fit: BoxFit.fill,
           ),
           Padding(
             padding: const EdgeInsets.fromLTRB(12, 12, 8, 8),
