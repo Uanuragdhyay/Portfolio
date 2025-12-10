@@ -243,13 +243,8 @@ Write widget tests for UI components and unit tests for pure logic.
 For questions or to collaborate, contact:
 
 * **Author:** Anurag Upadhyay
-* **GitHub:** `Uanuragdhyay` (based on repo's commit author)
+* **GitHub:** `Uanuragdhyay` 
 
 ---
 
-### Next steps I can help with
 
-* Generate a short `README.md` or a detailed one tailored to exact app screens and dependencies if you paste `lib/` tree or `pubspec.yaml`.
-* Produce `CONTRIBUTING.md`, `ISSUE_TEMPLATE`, or GitHub Actions for CI/CD.
-
-*Happy building!*
