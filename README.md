@@ -17,7 +17,6 @@
 9. [Building & releasing](#building--releasing)
 10. [Code style & linting](#code-style--linting)
 11. [Contributing](#contributing)
-12. [Licensing & contact](#licensing--contact)
 
 ---
 
@@ -240,9 +239,6 @@ Write widget tests for UI components and unit tests for pure logic.
 * If assets are missing: ensure paths are correct in `pubspec.yaml` and run `flutter pub get`.
 * If platform build fails: run `flutter doctor -v` and follow the tool's suggestions.
 
-## License & contact
-
-Add an appropriate license file (e.g., `LICENSE` with MIT or Apache-2.0) if you want to open-source the project.
 
 For questions or to collaborate, contact:
 
