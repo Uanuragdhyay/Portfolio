@@ -33,10 +33,6 @@ This repository contains a Flutter-based portfolio application meant to showcase
 * Platform-specific folders maintained by Flutter
 * Unit and widget test folder (`test/`) ready for adding tests
 
-## Preview
-
-Screenshots of the repo root and file structure are included in the project (or were provided when requesting this README).
-
 ## Prerequisites
 
 Make sure you have the following installed on your machine:
