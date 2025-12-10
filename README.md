@@ -8,15 +8,14 @@
 
 1. [About](#about)
 2. [Features](#features)
-3. [Preview](#preview)
-4. [Prerequisites](#prerequisites)
-5. [Getting started](#getting-started)
-6. [Project structure & explanation](#project-structure--explanation)
-7. [Assets & dependencies](#assets--dependencies)
-8. [Testing](#testing)
-9. [Building & releasing](#building--releasing)
-10. [Code style & linting](#code-style--linting)
-11. [Contributing](#contributing)
+3. [Prerequisites](#prerequisites)
+4. [Getting started](#getting-started)
+5. [Project structure & explanation](#project-structure--explanation)
+6. [Assets & dependencies](#assets--dependencies)
+7. [Testing](#testing)
+8. [Building & releasing](#building--releasing)
+9. [Code style & linting](#code-style--linting)
+10. [Contributing](#contributing)
 
 ---
 
@@ -240,10 +239,10 @@ Write widget tests for UI components and unit tests for pure logic.
 * If platform build fails: run `flutter doctor -v` and follow the tool's suggestions.
 
 
-For questions or to collaborate, contact:
 
-* **Author:** Anurag Upadhyay
-* **GitHub:** `Uanuragdhyay` 
+## **💌 Contact & Support**
+📧 Email: [uanurag@gmail.com](mailto:uanurag@gmail.com)  
+📌 GitHub: [GitHub Profile](https://github.com/Uanuragdhyay)
 
 ---
 
